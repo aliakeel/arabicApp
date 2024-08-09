@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:kaleela/views/Drawing/DrawingScreen.dart';
 import 'package:kaleela/views/auth/binding.dart';
 import 'package:kaleela/views/auth/index.dart';
 import 'package:kaleela/views/choose_language/binding.dart';
@@ -58,6 +59,11 @@ abstract class AppRouting {
           page: () => QuizPage(),
           binding: QuizBinding(),
         ),
+        GetPage(
+          name: Pages.draw.value,
+          page: () => DrawingScreen(),
+          // binding: QuizBinding(),
+        ),
       ];
 }
 
@@ -69,6 +75,7 @@ enum Pages {
   topics,
   topic,
   lesson,
+  draw,
   quiz,
 }
 
@@ -91,6 +98,8 @@ extension PagesExtension on Pages {
         return '/lesson';
       case Pages.quiz:
         return '/quiz';
+      case Pages.draw:
+        return '/draw';
       default:
         throw 'unnamed route';
     }
@@ -116,6 +125,8 @@ abstract class Navigation {
         return Pages.lesson;
       case '/quiz':
         return Pages.quiz;
+      case '/draw':
+        return Pages.draw;
       default:
         return null;
     }

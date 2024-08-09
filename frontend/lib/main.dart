@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
           getPages: AppRouting.routes(),
           debugShowCheckedModeBanner: false,
           theme: ThemeData(),
-          initialRoute: '/splashPage',
+          initialRoute: '/draw',
+          // initialRoute: '/splashPage',
         );
       },
     );
